@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Sentiment Analysis</title>
+    	<link rel="stylesheet" href="../static/index.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="jvscript.js"></script>
+	</head>
+	<body>
+		<!--header-->
+		<div class="header-page">
+			<div class="container">
+				<div class="navbar">
+				</div>
+				<div class="row">
+					<div class="col-2">
+						<h1>Sentiment Analysis</h1>
+						<h2>Use sentiment analysis to quickly detect emotions in text data.</h2>
+					</div>
+				</div>
+				<div class="small-container">
+					<table>
+						<tr>
+						  <th>
+							  Test with your own text
+						  </th>	
+						</tr>
+						<tr>
+							<th>
+								<form class="grid" action="/result" method="POST">
+
+									{% if name %}
+									  <center>
+										<h3 style="color: blue;" class="let_space">Hello {{name}}, How was your day!!</h3>
+									  </center> 
+						  
+									{% endif %}
+									 
+									<label for="name">Enter you name:</label>
+									<input type="text" id="name" name="name">
+						  
+									<center><input class="file_submit" type="Submit"></center>
+						  
+								  </form>
+								  <h3>{{ pred_tox }} <br><br>
+									{{ pred_sev }} <br><br>
+									{{ pred_obs }} <br><br>
+									{{ pred_ins }} <br><br>
+									{{ pred_thr }} <br><br>
+									{{ pred_ide }}
+									</h3>
+							</th>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
